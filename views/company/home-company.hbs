@@ -1,0 +1,53 @@
+{{#if removedCompany}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Company has been removed.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+    <div class="col-6">
+        <h1 class=" text-success text-decoration-underline ">Companies</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="/company/addcompany" type="button" class="btn btn-success align-self-center">+ Add company</a>
+    </div>
+</div>
+
+<table class="table table-bordered  table-hover border border-dark table-striped bg-light">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Company ID</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Location</th>
+            <th scope="col">Estd</th>
+            <th scope="col" class="text-end">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each rows}}
+        <tr>
+            <th scope="row">{{this.Comp_ID}}</th>
+            <td>{{this.Comp_Name}}</td>
+            <td>{{this.Email}}</td>
+            <td>{{this.Location}}</td>
+            <td>{{this.Estd}}</td>
+
+            <td class="text-end">
+                <a href="/company/viewcompany/{{this.Comp_ID}}" type="button" class="btn btn-small btn-danger"><i
+                        class="bi bi-eye"></i>
+                    View</a>
+                <a href="/company/editcompany/{{this.Comp_ID}}" type="button" class="btn btn-warning btn-small"><i
+                        class="bi bi-pencil"></i>
+                </a>
+                <a href="/company/{{this.Comp_ID}}" type="button" class="btn btn-secondary btn-small">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

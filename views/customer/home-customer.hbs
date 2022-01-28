@@ -1,0 +1,51 @@
+{{#if removedCustomer}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Customer has been removed.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+    <div class="col-6">
+        <h1 class=" text-success text-decoration-underline">Customers</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="/customer/addcustomer" type="button" class="btn btn-success align-self-center">+ Add customer</a>
+    </div>
+</div>
+
+<table class="table table-bordered  table-hover border border-dark table-striped bg-light">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Customer_ID</th>
+            <th scope="col">Cust_Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col" class="text-end">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each rows}}
+        <tr>
+            <th scope="row">{{this.Customer_ID}}</th>
+            <td>{{this.Cust_Name}}</td>
+            <td>{{this.Email}}</td>
+            <td>{{this.Phone}}</td>
+
+            <td class="text-end">
+                <a href="/customer/viewcustomer/{{this.Customer_ID}}" type="button" class="btn btn-danger btn-small"><i
+                        class="bi bi-eye"></i>
+                    View</a>
+                <a href="/customer/editcustomer/{{this.Customer_ID}}" type="button" class="btn btn-warning btn-small"><i
+                        class="bi bi-pencil"></i>
+                </a>
+                <a href="/customer/{{this.Customer_ID}}" type="button" class="btn btn-secondary btn-small"><i
+                        class="bi bi-person-x"></i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

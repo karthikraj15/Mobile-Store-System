@@ -1,0 +1,141 @@
+<a onclick="history.back()" type="button" class="btn text-white align-self-center d-print-none"
+    style="background-color: #563d7c ">
+    <i class="bi bi-backspace-fill"></i> Go Back!</a>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="/css/invoice.css">
+</head>
+
+<body>
+    {{#each ans}}
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="https://www.sparksuite.com/images/logo.png"
+                                    style="width: 100%; max-width: 300px" />
+                                <br>
+                                <!-- h2><b>Mobile Store</b></h2-->
+                            </td>
+
+                            <td>
+                                <b>Ord ID :</b> {{this.Ord_ID}}<br />
+                                <b>Invoice #: </b>{{this.Invoice}}<br />
+                                <b>Date: </b>{{this.Ord_Date}}
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td>
+                                <b> Sparksuite Store</b>,<br />
+                                12345 MG Road<br />
+                                Bangalore India 560051
+                            </td>
+
+                            <td><b><a href="/customer/viewcustomer/{{this.Cust_ID}}"
+                                        class="text-decoration-none text-dark">{{this.Cust_ID}} --
+                                        {{this.Cust_Name}}</b><br />
+                                {{this.Email}}<br />
+                                {{this.Phone}}<br />
+                                {{this.Address}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="heading">
+                <td>
+                    <h5><b>Payment Method</b></h5>
+                </td>
+
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr class="details">
+                <td><select class="form-select form-select-sm mb-1 mt-1" aria-label=".form-select-sm example">
+                        <option value="Cash">Cash</option>
+                        <option value="wallet">wallet</option>
+                        <option value="Check">Check</option>
+                        <option value="Card">Card</option>
+                    </select></td>
+
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr class="heading">
+                <td>
+                    <h5><b>Item</b></h5>
+                </td>
+
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="heading">
+                <td>
+                    Mobile Details :
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <tr class="item ">
+                <td><b>Mobile ID : </b><a href="/mobile/viewmobile/{{this.Mob_ID}}"
+                        class="text-decoration-none text-dark">{{this.Mob_ID}}</a></td>
+
+                <td class="text-center"><b>Processor : </b>{{this.Processor}} </td>
+                <td align="right"><b>Quantity : </b>{{this.Quantity}}</td>
+            </tr>
+
+            <tr class="item">
+
+                <td><b>{{this.Mob_Name}}</b></td>
+
+                <td class="text-center"><b>Camera : </b>{{this.Camera}} </td>
+                <td align="right"><b>RAM : </b>{{this.RAM}}</td>
+
+            </tr>
+
+            <tr class="item last">
+                <td><b>Display Size : </b>{{this.Display_Size}}</td>
+
+                <td class="text-center"><b>Battery : </b>{{this.Battery}} </td>
+                <td align="right"><b>Storage : </b>{{this.Storage}}</td>
+            </tr>
+
+            <tr class="total">
+                <td></td>
+                <td></td>
+                <td align="right"><u>Amount :</u> Rs {{this.Ord_Price}}</td>
+            </tr>
+        </table>
+    </div>
+    {{/each}}
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            <a onclick="window.print()" type="button" class="btn text-white align-self-center d-print-none"
+                style="background-color: #563d7c ">
+                Print Invoice <i class="bi bi-printer"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>

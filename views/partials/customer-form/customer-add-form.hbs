@@ -1,0 +1,56 @@
+<div class="col-3">
+    <a onclick="history.back()" type="button" class="btn text-white align-self-center"
+        style="background-color: #563d7c ">
+        <i class="bi bi-backspace-fill"></i> Go Back!</a>
+</div>
+<br>
+<h3 class=" text-success text-decoration-underline">Register as a customer:</h3>
+<div class="row">
+    <div class="col-6">
+        <h5 class="text-muted">"If already a customer proceed to order details"</h5>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="/orders/addorders" type="button" class="btn text-white align-self-center"
+            style="background-color: #563d7c ">
+            Proceed to order Details <i class="bi bi-forward-fill"></i></a>
+    </div>
+</div>
+
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Customer_ID}}"
+            placeholder="Customer ID" name="Customer_ID" required>
+        <label for="floatingInput" class="form-label">Customer ID</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Cust_Name}}"
+            placeholder="Customer Name" name="Cust_Name" required>
+        <label for="floatingInput">Customer Name</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" value="{{this.Email}}" placeholder="email@email.com"
+            name="Email">
+        <label for="floatingInput">Email</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Phone}}" placeholder="Phone"
+            name="Phone" required>
+        <label for="floatingInput">Phone</label>
+    </div>
+</div>
+<div class="col-12">
+    <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Address" id="address" name="Address"
+            style="height:150px">{{this.Address}}</textarea>
+        <label for="address">Address</label>
+    </div>
+</div>
+<div class="col-4 d-grid">
+    <button class="btn btn-success" type="submit">Upload your Details <i class="bi bi-file-arrow-up-fill"></i></button>
+</div>

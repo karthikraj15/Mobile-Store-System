@@ -1,0 +1,58 @@
+{{#if removedOrders}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Order has been removed.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+    <div class="col-6">
+        <h1 class=" text-success text-decoration-underline ">Orders</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="/orders/addorders" type="button" class="btn btn-success align-self-center">+ Add Order</a>
+    </div>
+</div>
+
+<table class="table table-bordered  table-hover border border-dark table-striped bg-light">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Order ID</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Order Price</th>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Mob ID</th>
+            <th scope="col">Quantity</th>
+
+            <th scope="col" class="text-end">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each rows}}
+        <tr>
+            <th scope="row">{{this.Ord_ID}}</th>
+            <td>{{this.Ord_Date}}</td>
+            <td>{{this.Ord_Price}}</td>
+            <td><a href="/customer/viewcustomer/{{this.Cust_ID}}" class="text-decoration-none">{{this.Cust_ID}}</a>
+            </td>
+            <td><a href="/mobile/viewmobile/{{this.Mob_ID}}" class="text-decoration-none">{{this.Mob_ID}}</a> </td>
+            <td>{{this.Quantity}}</td>
+
+
+            <td class="text-end">
+                <a href="/orders/vieworders/{{this.Ord_ID}}" type="button" class="btn btn-danger btn-small"><i
+                        class="bi bi-eye"></i>
+                    View</a>
+                <a href="/orders/editorders/{{this.Ord_ID}}" type="button" class="btn btn-warning btn-small"><i
+                        class="bi bi-pencil"></i>
+                </a>
+                <a href="/orders/{{this.Ord_ID}}" type="button" class="btn btn-secondary btn-small">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

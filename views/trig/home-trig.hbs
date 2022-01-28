@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-6">
+        <h1 class=" text-success ">Logs</h1>
+    </div>
+</div>
+
+<table class="table table-bordered  table-hover border border-dark table-striped bg-light">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Mobile ID</th>
+            <th scope="col">Mobile Name</th>
+            <th scope="col">Mfd Date</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Company ID</th>
+            <th scope="col">Query</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <th scope="row"><a href="/mobile/viewmobile/{{this.Mob_ID}}"
+                    class="text-decoration-none">{{this.Mob_ID}}</a> </th>
+            <td>{{this.Mob_name}}</td>
+            <td>{{this.Mfd_Date}}</td>
+            <td>{{this.Price}}</td>
+            <td>{{this.Stock}}</td>
+            <td><a href="/company/viewcompany/{{this.Comp_ID}}" class="text-decoration-none">{{this.Comp_ID}}</a> </td>
+            <td>{{this.Query}}</td>
+            <td>{{this.Date}}</td>
+            <td>{{this.Time}}</td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+
+</table>

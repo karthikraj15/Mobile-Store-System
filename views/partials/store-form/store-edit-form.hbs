@@ -1,0 +1,45 @@
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Store_ID}}" placeholder="Store ID"
+            name="Store_ID" readonly>
+        <label for="floatingInput" class="form-label">Store ID</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Store_Name}}" placeholder="Store Name"
+            name="Store_Name" required>
+        <label for="floatingInput">Store Name</label>
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Phone}}" placeholder="Phone"
+            name="Phone" required>
+        <label for="floatingInput">Phone</label>
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Location}}" placeholder="Location"
+            name="Location" required>
+        <label for="floatingInput">Location</label>
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Comp_ID}}" placeholder="Comp ID"
+            name="Comp_ID" readonly>
+        <label for="floatingInput">Comp ID</label>
+    </div>
+</div>
+<div class="col-12">
+    <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Description" id="Description" name="Description"
+            style="height: 200px">{{this.Description}}</textarea>
+        <label for="Description">Description</label>
+    </div>
+</div>
+<div class="col-12 d-grid">
+    <button class="btn btn-success" type="submit">Update</button>
+</div>

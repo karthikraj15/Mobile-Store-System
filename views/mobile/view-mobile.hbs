@@ -1,0 +1,152 @@
+<div class="col-3">
+    <a onclick="history.back()" type="button" class="btn text-white align-self-center"
+        style="background-color: #563d7c ">
+        <i class="bi bi-backspace-fill"></i> Go Back!</a>
+</div>
+<div class="view-mobile p-5">
+    {{#each ans}}
+    <div class="row mb-2 justify-content-center">
+        <div class="col ">
+            <h2 class=" text-success text-decoration-underline">{{this.Mob_ID}} -- {{this.Mob_Name}}</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-5 ">
+            <img class="img-fluid" alt="" src="{{this.Mob_image}}" width="300" height="400">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered  table-hover border border-dark table-striped bg-light">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Mob_ID</th>
+                        <th scope="col">Mob_Name</th>
+                        <th scope="col">Mfd_Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Comp_ID</th>
+                        <th scope="col">Stock Avl</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{this.Mob_ID}}</th>
+                        <td>{{this.Mob_Name}}</td>
+                        <td>{{this.Mfd_Date}}</td>
+                        <td>{{this.Price}}</td>
+                        <td><a href="/company/viewcompany/{{this.Comp_ID}}"
+                                class="text-decoration-none">{{this.Comp_ID}}</a> </td>
+                        <td>{{this.Stock}}</td>
+                        <td class="text-end">
+                            <a href="/customer/addcustomer" type="button" class="btn btn-info btn-small">
+                                <i class="bi bi-cart4"></i>
+                                Order</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=" row">
+        <div class="col">
+            <table class="table table-bordered  table-hover border border-dark table-striped bg-light ">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Processor</th>
+                        <th scope="col">Camera</th>
+                        <th scope="col">Display_Size</th>
+                        <th scope="col">Battery</th>
+                        <th scope="col">RAM</th>
+                        <th scope="col">Storage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{this.Processor}}</td>
+                        <td>{{this.Camera}}</td>
+                        <td>{{this.Display_Size}}</td>
+                        <td>{{this.Battery}}</td>
+                        <td>{{this.RAM}}</td>
+                        <td>{{this.Storage}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<div class="row">
+    <div class="col-6">
+        <h3 class="text-success"><u>Leave your complaint here:</u></h3>
+        {{#if currentUser}}
+        {{else}}
+        <h4 class="text-warning">Log In to submit a complaint</h4>
+        {{/if}}
+        <br>
+        <form action="/mobile/viewmobile/{{id}}/complaints" method="POST" class="mb-3 validated-form" novalidate>
+            <div class="mb-3">
+                <fieldset class="starability-heartbeat">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="1" checked
+                        aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="rating" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="rating" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="rating" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="rating" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="rating" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+                <label class="form-label" for="complaint">Customer ID:</label>
+                <input class="form-control" type="input" name="cust_id" id="complaint" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="body">Complaint Details:</label>
+                <textarea class="form-control" name="body" id="body" cols="30" rows="3" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            {{#if currentUser}}
+            <button class="btn btn-success">Submit</button>
+            {{/if}}
+        </form>
+
+    </div>
+
+    <div class="col-6">
+        <br>
+        <br>
+        <br>
+        {{#each s3 }}
+        {{#each this}}
+        <div class="card mb-3 ">
+            <div class="card-body">
+                <h6 class="card-title">Customer : <a href="/customer/viewcustomer/{{this.cust_id}}"
+                        class="text-decoration-none">{{this.cust_id}}</a>
+                </h6>
+                <p class="starability-result" data-rating="{{this.rating}}">
+                    Rated: {{this.rating}} stars
+                </p>
+                <p class="card-text">{{this.body}} </p>
+
+                <form action="/mobile/viewmobile/{{this.mob_id}}/complaints/{{this._id}}?_method=DELETE" method="POST">
+                    {{#if ../../currentUser}}
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                    {{/if}}
+                </form>
+
+            </div>
+        </div>
+        {{/each}}
+        {{/each}}
+    </div>
+</div>

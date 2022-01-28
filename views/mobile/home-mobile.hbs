@@ -1,0 +1,66 @@
+{{#if removedMobile}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Mobile has been removed.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+    <div class="col-6">
+        <h1 class="text-success ">Products</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="/mobile/addmobile" type="button" class="btn btn-success align-self-center" style="margin-right:16px">+
+            Add mobile</a>
+    </div>
+</div>
+
+
+{{#each mobilechunks}}
+<div class="row row-cols-1 row-cols-md-3">
+    {{#each this}}
+    <div class="col mb-4 ">
+        <div class="card h-100">
+            <!--img src="{{this.Mob_image}}" class="card-img-top" alt="..." width="100" height="400"-->
+            <img class="img-fluid" alt="" src="{{this.Mob_image}}" width="350" height="400" style="margin:0 auto;">
+            <div class="card-body">
+                <h5 class="card-title text-danger ">{{this.Mob_ID}} -- {{this.Mob_Name}}</h5>
+                <p class="card-text">
+                <h5>Stock Avl : {{this.Stock}}</h5>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        Mfd Date: {{this.Mfd_Date}}
+                    </small>
+                </p>
+                <p class="card-text">
+                    <b>Company ID: </b><a href="/company/viewcompany/{{this.Comp_ID}}"
+                        class="text-decoration-none">{{this.Comp_ID}}</a>
+                </p>
+                <a href="/mobile/viewmobile/{{this.Mob_ID}}" type="button" class="btn btn-primary btn-small"><i
+                        class="bi bi-eye"></i>
+                    View</a>
+                <a href="/mobile/editmobile/{{this.Mob_ID}}" type="button" class="btn btn-warning btn-small"><i
+                        class="bi bi-pencil"></i>
+                </a>
+                <a href="/mobile/{{this.Mob_ID}}" type="button" class="btn btn-secondary btn-small">
+                    <i class="bi bi-trash"></i>
+                </a>
+
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                    <h5 class="text col-6">Rs {{this.Price}}</h5>
+                    <div class="col-6 d-flex justify-content-end">
+                        <a href="/customer/addcustomer" type="button" class="btn text-white align-self-center"
+                            style="margin-right:16px ; background-color: #563d7c"><i class="bi bi-cart4"></i>
+                            Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}

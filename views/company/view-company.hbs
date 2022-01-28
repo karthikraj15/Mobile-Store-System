@@ -1,0 +1,46 @@
+<a onclick="history.back()" type="button" class="btn text-white align-self-center d-print-none"
+    style="background-color: #563d7c ">
+    <i class="bi bi-backspace-fill"></i> Go Back!</a>
+<div class="view-company p-5">
+    {{#each rows}}
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h2 class=" text-success text-decoration-underline ">{{this.Comp_ID}} -- {{this.Comp_Name}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered  table-hover border border-dark table-striped bg-light">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Company ID</th>
+                        <th scope="col">Company Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Estd</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{this.Comp_ID}}</th>
+                        <td>{{this.Comp_Name}}</td>
+                        <td>{{this.Email}}</td>
+                        <td>{{this.Location}}</td>
+                        <td>{{this.Estd}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col">
+                <b>Details</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{this.Details}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,19 @@
+<div class="col-3">
+    <a onclick="history.back()" type="button" class="btn text-white align-self-center"
+        style="background-color: #563d7c ">
+        <i class="bi bi-backspace-fill"></i> Go Back!</a>
+</div>
+<br>
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#each rows}}
+<form class="row g-3 needs-validation" method="POST" action="/customer/editcustomer/{{this.Customer_ID}}">
+    {{> customer-form/customer-edit-form}}
+</form>
+{{/each}}

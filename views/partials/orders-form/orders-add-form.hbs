@@ -1,0 +1,52 @@
+<div class="col-6">
+    <a onclick="history.back()" type="button" class="btn text-white align-self-center"
+        style="background-color: #563d7c ">
+        <i class="bi bi-backspace-fill"></i> Go Back!</a>
+</div>
+
+<h3 class=" text-success text-decoration-underline">Enter order details :</h3>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Ord_Date}}" placeholder="Order Date"
+            name="Ord_Date" required>
+        <label for="floatingInput">Order Date</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Ord_Price}}" placeholder="Order Price"
+            name="Ord_Price" required>
+        <label for="floatingInput">Order Price</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Quantity}}" placeholder="Quantity"
+            name="Quantity" required>
+        <label for="floatingInput">Quantity</label>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Invoice}}" placeholder="Invoice"
+            name="Invoice" required>
+        <label for="floatingInput">Invoice No</label>
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Mob_ID}}" placeholder="Mobile ID"
+            name="Mob_ID" required>
+        <label for="floatingInput">Mobile ID</label>
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" value="{{this.Cust_ID}}" placeholder="Customer ID"
+            name="Cust_ID" required>
+        <label for="floatingInput">Customer ID</label>
+    </div>
+</div>
+<div class="col-12 d-grid">
+    <button class="btn btn-success" type="submit">Confirm order</button>
+</div>

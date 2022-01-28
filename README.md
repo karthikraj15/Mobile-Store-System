@@ -1,8 +1,8 @@
 # Mobile-Shop-System
 This project was bootstrapped with - [Node.js](https://nodejs.org/en/docs/) & [Express](https://expressjs.com/en/guide/routing.html)
 
-Databases : MySql & Mongo
-
+Databases : MySql & Mongo  
+Developed using JavaScript, [Handlebars](https://handlebarsjs.com/guide/#what-is-handlebars) and Bootstrap
 
 ## Installation
 

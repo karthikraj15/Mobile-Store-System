@@ -1,5 +1,5 @@
 # Mobile-Shop-System
-This project was made using - [Node.js](https://nodejs.org/en/docs/) & [Express](https://expressjs.com/en/guide/routing.html)
+This project was bootstrapped with - [Node.js](https://nodejs.org/en/docs/) & [Express](https://expressjs.com/en/guide/routing.html)
 
 Databases : MySql & Mongo
 

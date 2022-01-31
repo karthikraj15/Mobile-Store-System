@@ -15,6 +15,7 @@ npm install
 ## Environment Variables
 
 - To run this project, you will need to add the following environment variables to your .env file
+
 `DB_HOST`
 `DB_NAME`
 `DB_USER`

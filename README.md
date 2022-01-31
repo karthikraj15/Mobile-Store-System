@@ -20,6 +20,7 @@ To run this project, you will need to add the following environment variables to
 `DB_NAME`
 `DB_USER`
 `DB_PASS`
+Refer `.env` for more info
 
 
 ## Run Locally

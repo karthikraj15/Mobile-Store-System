@@ -170,7 +170,7 @@ INSERT INTO `orders` (`Ord_ID`, `Ord_Date`, `Ord_Price`, `Quantity`, `Invoice`, 
 -- Triggers `orders`
 --
 DELIMITER $$
-CREATE TRIGGER `stock_update2` BEFORE INSERT ON `orders` FOR EACH ROW BEGIN
+CREATE TRIGGER `stock_update_2` BEFORE INSERT ON `orders` FOR EACH ROW BEGIN
 IF((SELECT mobile.Stock from mobile WHERE mobile.Mob_ID=NEW.Mob_ID)<NEW.Quantity) THEN
  SIGNAL sqlstate '45001' set message_text = "Quantity is more than Stock !";
 END if;

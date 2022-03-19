@@ -2,7 +2,7 @@
 This project was bootstrapped with - [Node.js](https://nodejs.org/en/docs/) & [Express](https://expressjs.com/en/guide/routing.html)
 
 - Databases used MySql & Mongo  
-- Developed using JavaScript, [Handlebars](https://handlebarsjs.com/guide/#what-is-handlebars) and Bootstrap
+- Developed using JavaScript, [Handlebars](https://handlebarsjs.com/guide/#what-is-handlebars) and [Passport.js](https://www.passportjs.org/)
 
 ## Installation
 

@@ -1,6 +1,5 @@
 # Mobile-Store-System
 An attractive and user-friendly website using Node.js . Powered by Javascript, Express.js, SQL and MongoDB for mobile ordering in stores.
-
 This project was bootstrapped with - [Node.js](https://nodejs.org/en/docs/) & [Express](https://expressjs.com/en/guide/routing.html)
 
 - Databases used MySql & Mongo  

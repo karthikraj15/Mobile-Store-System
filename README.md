@@ -25,7 +25,7 @@ Refer `.env` for more info
 ## Run Locally
 
 
-- Use the `mobile_shop.sql` file for SQL database
+- Use the `mobile_store.sql` file for SQL database
 - Start your Sql (Xampp) and MongoDB server
 - Ensure you have installed the node_modules
 

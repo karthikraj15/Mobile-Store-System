@@ -38,6 +38,7 @@ Start the server
 Runs the app in development mode  
 Open [http://localhost:5000]() to view it in the browser.
 
+### Sample output
 ![mobile_list](https://user-images.githubusercontent.com/88207381/201148732-06d79c0f-3144-4768-88e2-71526664a84c.png)
 
 

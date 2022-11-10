@@ -5,6 +5,13 @@ This project was bootstrapped with - [Node.js](https://nodejs.org/en/docs/) & [E
 - Databases used MySql & Mongo  
 - Developed using JavaScript, [Handlebars](https://handlebarsjs.com/guide/#what-is-handlebars) and [Passport.js](https://www.passportjs.org/)
 
+## Features
+* Store retailer can add or update details of mobiles in store
+* Retailer can take reviews/complains about mobiles, and share the review with the mobile company.
+* Search mobile by name
+* Retailer can place orders for mobiles from the customer
+* He can also manage customer details and track order details
+
 ## Installation
 
 Install the required node_modules
